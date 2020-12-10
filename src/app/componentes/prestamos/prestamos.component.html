@@ -1,0 +1,38 @@
+<div class="contenedor">
+    <br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="pre.id" type="string" placeholder="ID Prestamo">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="pre.idL" type="string" placeholder="ID libro">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="pre.idU" type="string" placeholder="ID Usuario">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="pre.libro" type="string" placeholder="Libro">
+    </mat-form-field><br>
+      <mat-form-field>
+          <input matInput [(ngModel)]="pre.usuario" type="string" placeholder="Usuario">
+      </mat-form-field><br>
+      <mat-form-field>
+          <input matInput [(ngModel)]="pre.estado" type="boolean" placeholder="Estado">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="pre.fechaPrestamo" type="string" placeholder="Fecha de Prestamo">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="pre.fechaDevolucion" type="string" placeholder="Fecha de Devolucion">
+  </mat-form-field><br>
+      <mat-form-field>
+        <mat-select placeholder="Opciones" [(ngModel)]="seleccionada" name="operacion">
+          <mat-option *ngFor="let op of operaciones" [value]="op.valor">
+            {{op.muestraValor}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>    
+      <div class="">
+        <button mat-raised-button color="primary" (click)="prestarlibro()">Ir</button>
+        <p>{{resultado}}</p>
+      </div>
+  </div>

@@ -1,0 +1,49 @@
+<div class="">
+  <br>
+  <table border="2" *ngIf="hayRegistros(); else sinusuarios">
+    <tr>
+      <td>idU</td><td>Nombre</td><td>Telefono</td><td>password</td><td>rol</td>
+    </tr>
+    <tr *ngFor="let usu of usuarios">
+      <td>{{usu.idU}}</td>
+      <td>{{usu.nombre}}</td>
+      <td>{{usu.email}}</td>
+      <td>{{usu.password}}</td>
+      <td>{{usu.rol}}</td>
+      <td>{{usu.estado}}</td>
+    </tr>
+    </table>
+    <br>
+    <ng-template #sinusuarios><p>No hay usuarios.</p></ng-template>
+    <div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.idU" type="string" placeholder="ID/Matricula">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.nombre" type="string" placeholder="Nombre">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.email" type="string" placeholder="Email">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.password" type="string" placeholder="Password">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.rol" type="string" placeholder="Rol">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="usu.estado" type="boolean" placeholder="Estado">
+      </mat-form-field><br>
+      <!-- <mat-form-field>
+        <mat-select placeholder="operacion" [(ngModel)]="seleccionada" name="operacion">
+          <mat-option *ngFor="let op of operaciones" [value]="op.valor">
+            {{op.muestraValor}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+        <button mat-raised-button color="primary" (click)="registrarUsuarios()">Registrar</button>
+        <p>{{resultado}}</p>
+    </div>
+</div>
+
+
